@@ -4,6 +4,7 @@ stra_pos = int(input())
 
 #I am making some copies of the variables to use them later
 glass_size_copyF = glass_size
+stra_pos_copyF = stra_pos
 
 #number_of_shots will be the number of pictures
 number_of_shots = 0
@@ -50,7 +51,7 @@ for i in range(number_of_shots + 1):
         #when all space locations are done, program just prints the straw part on that line
         print("o", end='')
 
-        #After printing o we may need some other spaces before printing '/'
+        #After printing o we may need some other spaces before printing /
         afterSpace = 2 * glass_size_copyF - stra_pos
         for h in range(afterSpace):
             print(" ", end='')
@@ -58,9 +59,10 @@ for i in range(number_of_shots + 1):
         #preSpace is incremented by one because in each row the space that preceds the line increments one
         preSpace += 1
         glass_size_copyF -= 1
+        stra_pos_copyF += 1
 
     glass_size_copyF = glass_size
-
+    stra_pos_copyF = stra_pos
 
 
     for c in range(glass_size - i):
@@ -77,15 +79,12 @@ for i in range(number_of_shots + 1):
     #before printing "--" we still need some spaces whose number is determined by constant_preSpace, look line: 22
     for h in range(constant_preSpace):
         print(" ", end='')
-        #we need 2 '-' char, we may write it with loop/not sure about its neccesity mail to TAs.
-        for k in range(2):
-            print("-")
+        #we need 2 '-' char, we may write it with loop/not sure about its neccesity mail to TAs
+    print("--")
     for h in range(glass_size):
         # before printing "|" we still need some spaces whose number is determined by constant_preSpace, look line: 22
         for z in range(constant_preSpace):
             print(" ", end='')
-            # we need 2 '|' char, we may write it with loop
-            for j in range(2):
-                print("|")
+        print("||")
     #to have a one empty line between 2 pictures at the end I use print()
     print()
